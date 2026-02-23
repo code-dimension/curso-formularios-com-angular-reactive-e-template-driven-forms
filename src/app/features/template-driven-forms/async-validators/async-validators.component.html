@@ -9,11 +9,16 @@
     #nicknameModel="ngModel"
     required
     appUniqueNickname
+    minlength="6"
   />
 
   @if (nicknameModel.touched) {
     @if (nicknameModel.hasError('required')) {
       <p class="text-error">Campo Obrigatório</p>
+    }
+
+    @if (nicknameModel.hasError('minlength')) {
+      <p class="text-error">Tamanho mínimo é 6 caracteres</p>
     }
 
     @if (nicknameModel.hasError('isNicknameTaken')) {
