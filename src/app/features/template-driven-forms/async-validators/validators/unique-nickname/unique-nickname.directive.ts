@@ -1,11 +1,12 @@
-import { Directive, forwardRef } from '@angular/core';
+import { Directive, forwardRef, inject } from '@angular/core';
 import {
   AbstractControl,
   AsyncValidator,
   NG_ASYNC_VALIDATORS,
   ValidationErrors,
 } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { map, Observable, switchMap, timer } from 'rxjs';
+import { UniqueNicknameService } from './unique-nickname.service';
 
 @Directive({
   selector: '[appUniqueNickname]',
@@ -18,19 +19,25 @@ import { Observable } from 'rxjs';
   ],
 })
 export class UniqueNicknameDirective implements AsyncValidator {
+  private uniqueNicknameService = inject(UniqueNicknameService);
+
   validate(
     control: AbstractControl,
   ): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> {
-    return new Observable((observer) => {
-      if (control.value === 'teste') {
-        observer.next({
-          isNicknameTaken: true,
-        });
-      } else {
-        observer.next(null);
-      }
-
-      observer.complete();
-    });
+    return timer(500).pipe(
+      switchMap(() => {
+        return this.uniqueNicknameService.checkNickname(control.value).pipe(
+          map(({ isTaken }) => {
+            if (isTaken) {
+              return {
+                isNicknameTaken: true,
+              };
+            } else {
+              return null;
+            }
+          }),
+        );
+      }),
+    );
   }
 }
