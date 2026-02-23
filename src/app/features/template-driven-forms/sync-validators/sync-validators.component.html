@@ -1,14 +1,26 @@
 <fieldset class="fieldset">
-  <legend class="fieldset-legend">Page title</legend>
+  <legend class="fieldset-legend">Palavra que deve ser inclusa</legend>
+  <input
+    type="text"
+    class="input"
+    placeholder="Digite a palavra que deve ser inclusa"
+    [(ngModel)]="includeWord"
+  />
+</fieldset>
+
+<fieldset class="fieldset">
+  <legend class="fieldset-legend">Digite uma frase</legend>
   <input
     type="text"
     class="input"
     [class.input-error]="messageInput.touched && messageInput.invalid"
-    placeholder="My awesome page"
+    placeholder="Digite uma frase"
     [(ngModel)]="message"
     #messageInput="ngModel"
     required
     minlength="10"
+    ,
+    [appIncludeWordValidator]="includeWord()"
   />
 
   @if (messageInput.touched) {
