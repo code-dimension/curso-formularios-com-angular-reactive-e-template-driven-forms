@@ -8,11 +8,16 @@
     [(ngModel)]="nickname"
     #nicknameModel="ngModel"
     required
+    appUniqueNickname
   />
 
   @if (nicknameModel.touched) {
     @if (nicknameModel.hasError('required')) {
       <p class="text-error">Campo Obrigatório</p>
+    }
+
+    @if (nicknameModel.hasError('isNicknameTaken')) {
+      <p class="text-error">O nickname já está em uso</p>
     }
   }
 </fieldset>
