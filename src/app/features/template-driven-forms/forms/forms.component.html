@@ -1,0 +1,47 @@
+<form #form="ngForm" [ngFormOptions]="{ updateOn: 'blur' }" (ngSubmit)="onSubmit(form)">
+  <fieldset class="fieldset">
+    <legend class="fieldset-legend">Nome</legend>
+    <input
+      type="text"
+      class="input"
+      placeholder="Nome"
+      ngModel
+      [ngModelOptions]="{
+        name: 'name',
+        standalone: false,
+        updateOn: 'submit'
+      }"
+      required=""
+    />
+  </fieldset>
+
+  <fieldset class="fieldset">
+    <legend class="fieldset-legend">Email</legend>
+    <input type="email" class="input" placeholder="Email" name="email" ngModel required email="" />
+  </fieldset>
+
+  <fieldset class="fieldset">
+    <legend class="fieldset-legend">Senha</legend>
+    <input type="password" class="input" placeholder="Senha" name="password" ngModel required />
+  </fieldset>
+
+  <fieldset class="fieldset">
+    <legend class="fieldset-legend">Confirme a senha</legend>
+    <input
+      type="password"
+      class="input"
+      placeholder="Confirme a senha"
+      name="confirmPassword"
+      ngModel
+      required
+    />
+  </fieldset>
+
+  <div>
+    Form Value: {{ form.value | json }}
+  </div>
+
+  <button type="submit" class="btn btn-primary w-full mt-4" [disabled]="">
+    Enviar
+  </button>
+</form>
