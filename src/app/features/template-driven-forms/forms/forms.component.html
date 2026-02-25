@@ -1,4 +1,9 @@
-<form #form="ngForm" [ngFormOptions]="{ updateOn: 'blur' }" (ngSubmit)="onSubmit(form)">
+<form
+  #form="ngForm"
+  [ngFormOptions]="{ updateOn: 'blur' }"
+  (ngSubmit)="onSubmit(form)"
+  [appIsPasswordEqual]="['password', 'confirmPassword']"
+>
   <fieldset class="fieldset">
     <legend class="fieldset-legend">Nome</legend>
     <input
@@ -53,6 +58,8 @@
     <label class="label">Complemento</label>
     <input type="text" class="input" placeholder="Apto 123" ngModel name="complement" />
   </fieldset>
+
+  <div>Form Errors: {{ form.errors | json }}</div>
 
   <div>Form Value: {{ form.value | json }}</div>
   <div>Address Value: {{ address.value | json }}</div>
