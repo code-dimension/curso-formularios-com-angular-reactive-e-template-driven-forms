@@ -9,7 +9,7 @@
       [ngModelOptions]="{
         name: 'name',
         standalone: false,
-        updateOn: 'submit'
+        updateOn: 'submit',
       }"
       required=""
     />
@@ -37,11 +37,25 @@
     />
   </fieldset>
 
-  <div>
-    Form Value: {{ form.value | json }}
-  </div>
+  <fieldset
+    ngModelGroup="address"
+    #address="ngModelGroup"
+    class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4"
+  >
+    <legend class="fieldset-legend">Endereço</legend>
 
-  <button type="submit" class="btn btn-primary w-full mt-4" [disabled]="">
-    Enviar
-  </button>
+    <label class="label">Rua</label>
+    <input type="text" class="input" placeholder="Av. Paulista" required ngModel name="street" />
+
+    <label class="label">Número</label>
+    <input type="text" class="input" placeholder="123" required ngModel name="number" />
+
+    <label class="label">Complemento</label>
+    <input type="text" class="input" placeholder="Apto 123" ngModel name="complement" />
+  </fieldset>
+
+  <div>Form Value: {{ form.value | json }}</div>
+  <div>Address Value: {{ address.value | json }}</div>
+
+  <button type="submit" class="btn btn-primary w-full mt-4" [disabled]="">Enviar</button>
 </form>
