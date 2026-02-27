@@ -1,23 +1,11 @@
 <form
   #form="ngForm"
-  [ngFormOptions]="{ updateOn: 'blur' }"
   (ngSubmit)="onSubmit(form)"
   [appIsPasswordEqual]="['password', 'confirmPassword']"
 >
   <fieldset class="fieldset">
     <legend class="fieldset-legend">Nome</legend>
-    <input
-      type="text"
-      class="input"
-      placeholder="Nome"
-      ngModel
-      [ngModelOptions]="{
-        name: 'name',
-        standalone: false,
-        updateOn: 'submit',
-      }"
-      required=""
-    />
+    <input type="text" class="input" placeholder="Nome" name="name" ngModel required="" />
   </fieldset>
 
   <fieldset class="fieldset">
