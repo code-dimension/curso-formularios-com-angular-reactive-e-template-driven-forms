@@ -1,6 +1,8 @@
 import { JsonPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { fullNameValidator } from './validators/full-name.validator';
+import { maxNamesValidator } from './validators/max-names.validator';
 
 @Component({
   selector: 'app-form-control',
@@ -12,7 +14,12 @@ import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 export class FormControlComponent {
   protected nameControl = new FormControl('', {
     nonNullable: true,
-    validators: [Validators.required, Validators.minLength(3)]
+    validators: [
+      Validators.required,
+      Validators.minLength(3),
+      fullNameValidator,
+      maxNamesValidator(2),
+    ],
   });
 
   protected reset() {
