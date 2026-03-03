@@ -1,4 +1,4 @@
-import { tErrorMessages } from "../types/error-messages.type";
+import { tErrorMessages } from '../types/error-messages.type';
 
 export const errorMessages: tErrorMessages['errorMessages'] = {
   required: () => 'Campo obrigatório.',
@@ -8,6 +8,8 @@ export const errorMessages: tErrorMessages['errorMessages'] = {
   isNicknameTaken: () => 'O nickname já está em uso',
   minlength: ({ requiredLength, actualLength }) =>
     `O valor deve conter no mínimo ${requiredLength} caracteres (atualmente ${actualLength}).`,
+  invalidMaxNames: ({ maxQuantity }) => `Quantidade máxima de nomes é ${maxQuantity}`,
+  invalidFullname: () => 'Digite seu nome completo',
 };
 
 export const pendingMessage = 'Validando...';

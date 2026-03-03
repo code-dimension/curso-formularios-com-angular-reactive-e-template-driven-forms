@@ -3,10 +3,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { fullNameValidator } from './validators/full-name.validator';
 import { maxNamesValidator } from './validators/max-names.validator';
+import { ErrorMessagesComponent } from '../../../shared/error-messages/components/error-messages/error-messages.component';
 
 @Component({
   selector: 'app-form-control',
-  imports: [ReactiveFormsModule, JsonPipe],
+  imports: [ReactiveFormsModule, JsonPipe, ErrorMessagesComponent],
   templateUrl: './form-control.component.html',
   styleUrl: './form-control.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

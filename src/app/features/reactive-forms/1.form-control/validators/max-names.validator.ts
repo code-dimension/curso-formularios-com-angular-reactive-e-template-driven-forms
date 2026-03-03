@@ -13,7 +13,10 @@ export function maxNamesValidator(quantity: number) {
     }
 
     return {
-      invalidMaxNames: true,
+      invalidMaxNames: {
+        maxQuantity: quantity,
+        currentQuantity: length
+      },
     };
   };
 }
