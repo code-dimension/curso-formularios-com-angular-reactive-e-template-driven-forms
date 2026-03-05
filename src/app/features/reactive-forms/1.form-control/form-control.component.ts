@@ -4,6 +4,7 @@ import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { fullNameValidator } from './validators/full-name.validator';
 import { maxNamesValidator } from './validators/max-names.validator';
 import { ErrorMessagesComponent } from '../../../shared/error-messages/components/error-messages/error-messages.component';
+import { checkSimilarNameValidator } from './validators/check-similar-name.validator';
 
 @Component({
   selector: 'app-form-control',
@@ -21,6 +22,9 @@ export class FormControlComponent {
       fullNameValidator,
       maxNamesValidator(2),
     ],
+    asyncValidators: [
+      checkSimilarNameValidator()
+    ]
   });
 
   protected reset() {

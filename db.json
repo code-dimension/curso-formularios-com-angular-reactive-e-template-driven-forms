@@ -4,5 +4,19 @@
       "id": 1,
       "nickname": "henriquecustodia"
     }
+  ],
+  "names": [
+    {
+      "id": 1,
+      "name": "Ricardo Nunes"
+    },
+    {
+      "id": 2,
+      "name": "João Silva"
+    },
+    {
+      "id": 3,
+      "name": "Gabriela Santos"
+    }
   ]
 }
