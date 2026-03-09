@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { routes as templateDrivenFormsRoutes } from './features/template-driven-forms/routes';
-import { reactiveFormsRoutes } from './features/reactive-forms/1.form-control/routes';
+import { reactiveFormsRoutes } from './features/reactive-forms/routes';
 
 export const routes: Routes = [
   {
