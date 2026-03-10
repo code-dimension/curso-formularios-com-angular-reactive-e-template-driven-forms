@@ -3,6 +3,7 @@ import { FormControlComponent } from './1.form-control/form-control.component';
 import { ValidationsComponent } from './2.validations/validations.component';
 import { UsingMarkFunctionsComponent } from './3.using-mark-functions/using-mark-functions.component';
 import { SetErrorsComponent } from './4.set-errors/set-errors.component';
+import { FormGroupComponent } from './5.form-group/form-group.component';
 
 export const reactiveFormsRoutes: Routes = [
   {
@@ -21,4 +22,8 @@ export const reactiveFormsRoutes: Routes = [
     path: 'set-errors',
     component: SetErrorsComponent,
   },
+  {
+    path: 'form-group',
+    component: FormGroupComponent
+  }
 ];
