@@ -5,12 +5,13 @@
     <label class="label">Nome</label>
     <input type="text" class="input" placeholder="Seu nome" formControlName="name" />
     <app-error-messages [control]="form.controls.name" />
+    <button class="btn btn-primary btn-outline btn-xs" (click)="clearField()">Limpar</button>
 
     <label class="label">Email</label>
     <input type="email" class="input" placeholder="seuemail@gmail.com" formControlName="email" />
     <app-error-messages [control]="form.controls.email" />
 
-    <button class="btn btn-primary mt-4">Salvar</button>
+    <button class="btn btn-primary mt-4" [disabled]="form.invalid">Salvar</button>
 
     <div>Valores: {{ form.value | json }}</div>
   </fieldset>

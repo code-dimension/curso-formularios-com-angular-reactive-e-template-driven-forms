@@ -48,6 +48,10 @@ export class FormGroupComponent implements OnInit {
     }
   }
 
+  protected clearField() {
+    this.form.controls.name.setValue('', { onlySelf: true });
+  }
+
   protected submit(event: Event) {
     console.log('event', event);
 
