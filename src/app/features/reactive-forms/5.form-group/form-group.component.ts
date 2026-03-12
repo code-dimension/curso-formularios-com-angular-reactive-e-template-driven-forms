@@ -1,4 +1,4 @@
-import { JsonPipe } from '@angular/common';
+import { AsyncPipe, JsonPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ErrorMessagesComponent } from '../../../shared/error-messages/components/error-messages/error-messages.component';
@@ -12,7 +12,7 @@ function createStorage(key: string) {
 
 @Component({
   selector: 'app-form-group',
-  imports: [ReactiveFormsModule, JsonPipe, ErrorMessagesComponent],
+  imports: [ReactiveFormsModule, JsonPipe, ErrorMessagesComponent, AsyncPipe],
   templateUrl: './form-group.component.html',
   styleUrl: './form-group.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -23,14 +23,19 @@ export class FormGroupComponent implements OnInit {
   protected form = new FormGroup({
     name: new FormControl('', {
       validators: [Validators.required],
-      updateOn: 'blur',
     }),
     email: new FormControl('', {
       validators: [Validators.required, Validators.email],
     }),
-  }, {
-    updateOn: 'submit'
   });
+
+  toggle() {
+    if (this.form.controls.email.disabled) {
+      this.form.controls.email.enable({ onlySelf: true, emitEvent: true });
+    } else {
+      this.form.controls.email.disable({ onlySelf: true, emitEvent: true });
+    }
+  }
 
   ngOnInit(): void {
     this.form.valueChanges.subscribe((value) => {
