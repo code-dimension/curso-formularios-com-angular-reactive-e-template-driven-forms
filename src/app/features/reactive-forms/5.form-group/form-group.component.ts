@@ -10,6 +10,11 @@ function createStorage(key: string) {
   };
 }
 
+interface iFormContract {
+  name: FormControl<string | null>
+  email: FormControl<string>
+}
+
 @Component({
   selector: 'app-form-group',
   imports: [ReactiveFormsModule, JsonPipe, ErrorMessagesComponent, AsyncPipe],
@@ -20,11 +25,12 @@ function createStorage(key: string) {
 export class FormGroupComponent implements OnInit {
   draftStorage = createStorage('draft-form');
 
-  protected form = new FormGroup({
+  protected form = new FormGroup<iFormContract>({
     name: new FormControl('', {
       validators: [Validators.required],
     }),
     email: new FormControl('', {
+      nonNullable: true,
       validators: [Validators.required, Validators.email],
     }),
   });
