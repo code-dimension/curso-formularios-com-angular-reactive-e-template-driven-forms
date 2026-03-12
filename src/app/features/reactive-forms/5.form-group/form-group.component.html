@@ -11,7 +11,7 @@
     <input type="email" class="input" placeholder="seuemail@gmail.com" formControlName="email" />
     <app-error-messages [control]="form.controls.email" />
 
-    <button class="btn btn-primary mt-4" [disabled]="form.invalid">Salvar</button>
+    <button class="btn btn-primary mt-4">Salvar</button>
 
     <div>Valores: {{ form.value | json }}</div>
   </fieldset>

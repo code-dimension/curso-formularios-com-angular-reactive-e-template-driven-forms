@@ -23,10 +23,13 @@ export class FormGroupComponent implements OnInit {
   protected form = new FormGroup({
     name: new FormControl('', {
       validators: [Validators.required],
+      updateOn: 'blur',
     }),
     email: new FormControl('', {
       validators: [Validators.required, Validators.email],
     }),
+  }, {
+    updateOn: 'submit'
   });
 
   ngOnInit(): void {
@@ -43,7 +46,7 @@ export class FormGroupComponent implements OnInit {
 
     if (draftData) {
       this.form.patchValue(draftData, {
-        emitEvent: false
+        emitEvent: false,
       });
     }
   }
