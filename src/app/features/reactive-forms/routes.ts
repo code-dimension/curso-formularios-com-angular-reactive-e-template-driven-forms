@@ -4,6 +4,7 @@ import { ValidationsComponent } from './2.validations/validations.component';
 import { UsingMarkFunctionsComponent } from './3.using-mark-functions/using-mark-functions.component';
 import { SetErrorsComponent } from './4.set-errors/set-errors.component';
 import { FormGroupComponent } from './5.form-group/form-group.component';
+import { ManipulateControlsComponent } from './6.manipulate-controls/manipulate-controls.component';
 
 export const reactiveFormsRoutes: Routes = [
   {
@@ -24,6 +25,10 @@ export const reactiveFormsRoutes: Routes = [
   },
   {
     path: 'form-group',
-    component: FormGroupComponent
-  }
+    component: FormGroupComponent,
+  },
+  {
+    path: 'manipulate-controls',
+    component: ManipulateControlsComponent,
+  },
 ];
