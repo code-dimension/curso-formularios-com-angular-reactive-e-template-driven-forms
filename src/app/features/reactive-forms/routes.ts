@@ -5,6 +5,7 @@ import { UsingMarkFunctionsComponent } from './3.using-mark-functions/using-mark
 import { SetErrorsComponent } from './4.set-errors/set-errors.component';
 import { FormGroupComponent } from './5.form-group/form-group.component';
 import { ManipulateControlsComponent } from './6.manipulate-controls/manipulate-controls.component';
+import { FormRecordComponent } from './7.form-record/form-record.component';
 
 export const reactiveFormsRoutes: Routes = [
   {
@@ -31,4 +32,8 @@ export const reactiveFormsRoutes: Routes = [
     path: 'manipulate-controls',
     component: ManipulateControlsComponent,
   },
+  {
+    path: 'form-record',
+    component: FormRecordComponent,
+  }
 ];
