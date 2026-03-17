@@ -11,7 +11,8 @@ export const errorMessages: tErrorMessages['errorMessages'] = {
   invalidMaxNames: ({ maxQuantity }) => `Quantidade máxima de nomes é ${maxQuantity}`,
   invalidFullname: () => 'Digite seu nome completo',
   similarName: () => 'Já existe um nome parecido com esse',
-  fieldNameExists: () => 'Esse campo já existe'
+  fieldNameExists: () => 'Esse campo já existe',
+  repeatedEmail: () => 'Já existe esse email na lista',
 };
 
 export const pendingMessage = 'Validando...';

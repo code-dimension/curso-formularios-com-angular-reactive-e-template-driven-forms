@@ -1,4 +1,12 @@
 {
+  "user-emails": {
+    "name": "Henrique 2",
+    "emails": [
+      "teste3@gmail.com",
+      "teste1@gmail.com",
+      "teste2@gmail.com"
+    ]
+  },
   "user-preferences": {
     "receiveEmails": false,
     "receivePushNotifications": false,
