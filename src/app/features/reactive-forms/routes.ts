@@ -9,6 +9,7 @@ import { FormRecordComponent } from './7.form-record/form-record.component';
 import { SubFormsComponent } from './8.sub-forms/sub-forms.component';
 import { FormArrayComponent } from './9.form-array/form-array.component';
 import { getUserEmailsResolver } from './9.form-array/resolvers/get-user-emails.resolver';
+import { UtilityFunctionsComponent } from './10.utility-functions/utility-functions.component';
 
 export const reactiveFormsRoutes: Routes = [
   {
@@ -50,4 +51,8 @@ export const reactiveFormsRoutes: Routes = [
       userEmails: getUserEmailsResolver
     }
   },
+  {
+    path: 'utility-function',
+    component: UtilityFunctionsComponent
+  }
 ];
