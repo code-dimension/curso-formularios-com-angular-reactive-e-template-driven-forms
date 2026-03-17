@@ -1,9 +1,9 @@
-import { AbstractControl, FormArray, ValidationErrors } from '@angular/forms';
+import { AbstractControl, FormArray, isFormArray, ValidationErrors } from '@angular/forms';
 
 export function avoidRepeatedEmail(control: AbstractControl): ValidationErrors | null {
-  const isFormArray = control.parent instanceof FormArray;
+  const isFormArrayInstance = isFormArray(control.parent);
 
-  if (!isFormArray) {
+  if (!isFormArrayInstance) {
     return null;
   }
 
