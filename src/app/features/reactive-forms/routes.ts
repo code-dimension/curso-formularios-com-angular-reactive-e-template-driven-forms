@@ -12,6 +12,7 @@ import { getUserEmailsResolver } from './9.form-array/resolvers/get-user-emails.
 import { UtilityFunctionsComponent } from './10.utility-functions/utility-functions.component';
 import { FormBuilderComponent } from './11.form-builder/form-builder.component';
 import { ControlValueAcessorComponent } from './12.control-value-acessor/control-value-acessor.component';
+import { JsonFormExampleComponent } from './13.json-form-example/json-form-example.component';
 
 export const reactiveFormsRoutes: Routes = [
   {
@@ -50,19 +51,23 @@ export const reactiveFormsRoutes: Routes = [
     path: 'form-array',
     component: FormArrayComponent,
     resolve: {
-      userEmails: getUserEmailsResolver
-    }
+      userEmails: getUserEmailsResolver,
+    },
   },
   {
     path: 'utility-function',
-    component: UtilityFunctionsComponent
+    component: UtilityFunctionsComponent,
   },
   {
     path: 'form-builder',
-    component: FormBuilderComponent
+    component: FormBuilderComponent,
   },
   {
     path: 'control-value-acessor',
-    component: ControlValueAcessorComponent
-  }
+    component: ControlValueAcessorComponent,
+  },
+  {
+    path: 'json-form',
+    component: JsonFormExampleComponent,
+  },
 ];
