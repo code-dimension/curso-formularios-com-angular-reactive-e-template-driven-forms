@@ -16,6 +16,7 @@ import { JsonFormExampleComponent } from './13.json-form-example/json-form-examp
 import { ControlContainer } from '@angular/forms';
 import { ControlContainerComponent } from './14.control-container/control-container.component';
 import { SimpleStepperComponent } from './15.steppers/simple-stepper/simple-stepper.component';
+import { routes as routerStepperRoutes } from './15.steppers/router-stepper/routes';
 
 export const reactiveFormsRoutes: Routes = [
   {
@@ -80,5 +81,9 @@ export const reactiveFormsRoutes: Routes = [
   {
     path: 'simple-stepper',
     component: SimpleStepperComponent,
+  },
+   {
+    path: 'router-stepper',
+    children: routerStepperRoutes
   },
 ];
